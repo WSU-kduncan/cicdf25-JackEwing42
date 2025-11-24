@@ -1,0 +1,79 @@
+/* =============================
+   Global Styles
+   ============================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* =============================
+   Header
+   ============================= */
+header {
+    background-color: #0f172a;
+    color: #f8fafc;
+    text-align: center;
+    padding: 2em 1em;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    color: #38bdf8;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #94a3b8;
+}
+
+/* =============================
+   Main Content
+   ============================= */
+main {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h2 {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 0.3em;
+}
+
+ul {
+    margin-left: 1.5em;
+}
+
+code, pre {
+    background-color: #e2e8f0;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: monospace;
+    overflow-x: auto;
+}
+
+pre {
+    padding: 1em;
+    border-left: 4px solid #2563eb;
+}
+
+/* =============================
+   Footer
+   ============================= */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 1.5em;
+    margin-top: 2em;
+    font-size: 0.9em;
+}
