@@ -27,3 +27,4 @@ For this workflow I used the `Tag Events Trigger` and followed these steps.<br>
 `Step 3: Extract Docker metadata`: This is a step added to this workflow. This step will automatically create a Docker image tag and label based on the given repo state. It can create the next version number, the commit hash, the convention, and also the Git reference.<br>
 `Step 4: Log in to Docker Hub`: Same as in the previous workflow.<br>
 `Step 5: Build and Push Docker image`: Same as in the previous workflow.<br>
+[Link to workflow](.github/workflows/docker-build.yml_Tag_Request)<br><br>
