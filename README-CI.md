@@ -1,4 +1,4 @@
-For my `web-content`, I have transferred both the haproxy.html file and the style.css file, but I did ask ChatGPT for help creating a new index.html file that simply says "It Works".
+For my `web-content`, I have transferred both the haproxy.html file and the style.css file, but I did ask ChatGPT for help creating a new index.html file that simply says "It Works" that uses a css file named style.css.
 After that I went to work on my `Dockerfile` which is just a simple two line file that tells docker hub the image will run on httpd version 2.4, and copies the files from `web-content` into the instances `/htdocs` folder.<br><br>
 [Link to web-content](web-content)<br>
 [Link to Dockerfile](Dockerfile)<br><br>
@@ -14,7 +14,7 @@ A workflow can be triggered through many means, such as<br>
 `and Webhook-Like Events`: Triggered after Github activities (Issue, Issue comment, Release, Fork, Watch/Star, Create, etc.).<br>
 For this workflow I used the `Push Events` Trigger.<>br
 The steps followed through the workflow are followed in descending order, these steps are as follows for my workflow file. <br>`Step 1: Checkout code`: This will download (checkout) all repo contents into the workflow so that Docker can build an image from them, the `@v4` refers to the version being used. <br>`Step 2: Set up Docker Buildx`: This will setup `Buildx`, a helpful upgrade to the previously used `docker build`. <br> `Step 3: Log in to Docker Hub`: This will (when followed by a proper username and password/PAT) log into Docker Hub so the workflow can properlly build and push the docker image. <br>`Step 4: Build and Push Docker image`: This will build the image on github and then push the image to the users Docker Hub.<br>What needs to be changed when using this workflow script in another repo is the 4th step, maybe the build, and maybe the 3rd step. The build is not static, some people may use EC2 instances, or other linux CLI's, or maybe even a different version of Ubuntu. The 3rd step references secrets named by me in Github, the user needs to either have the same named secrets with the same info or hard code it to their specific info. The 4th step once again uses my secret, but also hard coded is the name of my image. This needs to change to whatever the `username/image:tag` is that the user is trying to push to.<br><br>
-[Link to workflow (Push Request)](.github/workflows/docker-build.yml_Push_Request)<br><br>
+[Link to workflow (Push Request)](.github/workflows/PushRequest_docker-build.yml)<br><br>
 The way to test that the workflow worked is by going to Docker Hub and looking in your repositories for the repo tagged and named the same as whatever you pushed it as. And to verify the image works, you can run the `docker run` command on a CLI to see if a container can be made from the image.<br><br>
 Tags are visibile by using the `git tag` command. Using this command the user can see all tags, with the `git show-ref --tags` command they can see each tag with more detail. And they can use `git show v*.*.*` to see a specific commit and what it references. Tagging a git repository has a lot of parts though. `git tag` `-a` `v*.*.*` `###XXX` `-m "tag message"` is an example of a full git tag, I'll explain each part.<br>
 `git tag` and `v*.*.*`: These two sections are the initial tag command, a simple pointer to a commit for the repo.<br>
@@ -28,6 +28,10 @@ For this workflow I used the `Tag Events Trigger` and followed these steps.<br>
 `Step 4: Log in to Docker Hub`: Same as in the previous workflow.<br>
 `Step 5: Build and Push Docker image`: This step has changed a bit. Instead of the image being tagged the same everytime, the step will refer to the new step for the name and tag of the image.<br>
 What needs to be changed in this workflow file is the build (for the same reason as last time), step 3 (for the same reason as step 4 for the last workflow), and step 5. Step 5 adds a new way of nameing and tagging the image before it is pushed. Instead of nameing it the same everytime, it will look to step 3 for the newest version name that has been created.<br><br    >
-[Link to workflow (Tag Request)](.github/workflows/docker-build.yml_Tag_Request)<br><br>
+[Link to workflow (Tag Request)](.github/workflows/TagRequest_docker-build.yml)<br><br>
 The goal of this project is to familiarize myself with Continuos Integration, a useful way of creating and upgrading container images using GitHub and Docker Hub. The tools used for this project are GitHub, DockerHub, Google, and ChatGPT. As stated earlier, ChatGPT was used to create an index.html file that say "It Works" with the prompt "Please create a basic index.html file that uses the file style.css as the design, the site should simply display 'It Works'".<br>
-[Workflow Diagram.pdf](https://github.com/user-attachments/files/23784363/Workflow.Diagram.pdf)
+[Workflow Diagram.pdf](https://github.com/user-attachments/files/23784363/Workflow.Diagram.pdf)<br><br>
+[Build and Push Docker Images](https://github.com/marketplace/actions/build-and-push-docker-images)<br>
+[Metadata Action](https://github.com/docker/metadata-action?tab=readme-ov-file#semver)<br><br>
+Generative AI<br><br>
+ChatGPT: "Please write me a base index.html file that simply says "It Works" that uses a css file named style.css"
