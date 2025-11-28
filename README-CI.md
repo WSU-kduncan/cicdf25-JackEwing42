@@ -32,6 +32,7 @@ What needs to be changed in this workflow file is the build (for the same reason
 The goal of this project is to familiarize myself with Continuos Integration, a useful way of creating and upgrading container images using GitHub and Docker Hub. The tools used for this project are GitHub, DockerHub, Google, and ChatGPT. As stated earlier, ChatGPT was used to create an index.html file that say "It Works" with the prompt "Please create a basic index.html file that uses the file style.css as the design, the site should simply display 'It Works'".<br>
 [Workflow Diagram.pdf](https://github.com/user-attachments/files/23784363/Workflow.Diagram.pdf)<br><br>
 [Build and Push Docker Images](https://github.com/marketplace/actions/build-and-push-docker-images)<br>
-[Metadata Action](https://github.com/docker/metadata-action?tab=readme-ov-file#semver)<br><br>
+[Metadata Action](https://github.com/docker/metadata-action?tab=readme-ov-file#semver)<br>
+[Lucidchart](https://www.lucidchart.com/pages)<br><br>
 Generative AI<br><br>
 ChatGPT: "Please write me a base index.html file that simply says "It Works" that uses a css file named style.css"
