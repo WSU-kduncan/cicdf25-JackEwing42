@@ -28,7 +28,8 @@ For this workflow I used the `Tag Events Trigger` and followed these steps.<br>
 `Step 4: Log in to Docker Hub`: Same as in the previous workflow.<br>
 `Step 5: Build and Push Docker image`: This step has changed a bit. Instead of the image being tagged the same everytime, the step will refer to the new step for the name and tag of the image.<br>
 What needs to be changed in this workflow file is the build (for the same reason as last time), step 3 (for the same reason as step 4 for the last workflow), and step 5. Step 5 adds a new way of nameing and tagging the image before it is pushed. Instead of nameing it the same everytime, it will look to step 3 for the newest version name that has been created.<br><br    >
-[Link to workflow (Tag Request)](.github/workflows/TagRequest_docker-build.yml)<br><br>
+[Link to workflow (Tag Request)](.github/workflows/TagRequest_docker-build.yml)<br>
+[Link to Docker Hub Page](https://hub.docker.com/repository/docker/jackewing/cicd-project/tags/latest/sha256-8393194659f40a48c5a1bf6e4821fbd966b616c0dac88c28ccf85d3634ba9a45)<br><br>
 The goal of this project is to familiarize myself with Continuos Integration, a useful way of creating and upgrading container images using GitHub and Docker Hub. The tools used for this project are GitHub, DockerHub, Google, and ChatGPT. As stated earlier, ChatGPT was used to create an index.html file that say "It Works" with the prompt "Please create a basic index.html file that uses the file style.css as the design, the site should simply display 'It Works'".<br>
 [Workflow Diagram.pdf](https://github.com/user-attachments/files/23784363/Workflow.Diagram.pdf)<br><br>
 [Build and Push Docker Images](https://github.com/marketplace/actions/build-and-push-docker-images)<br>
