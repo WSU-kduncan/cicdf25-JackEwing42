@@ -1,0 +1,15 @@
+[Unit]
+Description=adnanh Webhook Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/webhook -hooks /etc/webhook/hooks.json -verbose
+WorkingDirectory=/etc/webhook/
+User=ec2-user
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
