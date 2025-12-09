@@ -1,0 +1,18 @@
+[
+  {
+    "id": "deploy-my-app:",
+    "execute-command": "/home/ec2-user/cd-bashscript",
+    "command-working-directory": "/var/app",
+    "include-command-output-in-response": true,
+    "trigger-rule": {
+      "match": {
+        "type": "secure-compare",
+        "secret": "Twaddlestump",
+        "parameter": {
+          "source": "header",
+          "name": "X-Hub-Signature-256"
+        }
+      }
+    }
+  }
+]
