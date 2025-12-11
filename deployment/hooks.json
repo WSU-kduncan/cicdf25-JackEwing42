@@ -1,13 +1,13 @@
 [
   {
-    "id": "deploy-my-app:",
+    "id": "deploy-my-app",
     "execute-command": "/home/ec2-user/cd-bashscript",
-    "command-working-directory": "/var/app",
+    "command-working-directory": "/home/ec2-user/cicdf25-JackEwing42",
     "include-command-output-in-response": true,
     "trigger-rule": {
       "match": {
-        "type": "secure-compare",
-        "secret": "Twaddlestump",
+        "type": "payload-hash-sha256",
+        "secret": "CD_SECRET",
         "parameter": {
           "source": "header",
           "name": "X-Hub-Signature-256"
@@ -16,3 +16,7 @@
     }
   }
 ]
+
+
+Note:
+CD_SECRET is not in the hooks.json file, the contents of CD_SECRET are
