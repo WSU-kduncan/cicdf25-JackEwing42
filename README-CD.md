@@ -68,3 +68,6 @@ The purpose of this assignment was to familiarize ourselves with these tools giv
 [systemd System and Service Manager](https://systemd.io/)<br>
 [Red HAt Documentation](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/using_systemd_unit_files_to_customize_and_optimize_your_system/assembly_working-with-systemd-unit-files_working-with-systemd)<br>
 [Using GitHub actions and webhooks](https://levelup.gitconnected.com/automated-deployment-using-docker-github-actions-and-webhooks-54018fc12e32)
+
+### Parts not working
+Previously the parts that were incomplete were my security groups, a few syntax errors and spelling mistakes in my bash script which caused it to fail, a change in the hooks.json that said /var/app was the working directory, and an incorrect webhook trigger in Github.
